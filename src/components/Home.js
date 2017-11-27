@@ -7,7 +7,7 @@ export default class Home extends Component {
   state = {
     things: ['Ouch'],
     randomNumber: 0,
-    randomWords: 'Anything'
+    randomWords: 'Something'
   }
 
   render() {
