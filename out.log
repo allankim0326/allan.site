@@ -1,0 +1,18 @@
+App listening on port 80!
+::1 - - [27/Nov/2017:08:07:29 +0000] "GET / HTTP/1.1" 200 655 10.696 ms
+::1 - - [27/Nov/2017:08:07:29 +0000] "GET /static/css/main.45cb7836.css HTTP/1.1" 200 363 4.888 ms
+::1 - - [27/Nov/2017:08:07:29 +0000] "GET /static/js/main.e2c79037.js HTTP/1.1" 200 169282 2.337 ms
+::1 - - [27/Nov/2017:08:07:29 +0000] "GET /static/media/logo.5d5d9eef.svg HTTP/1.1" 200 2671 1.230 ms
+::1 - - [27/Nov/2017:08:07:29 +0000] "GET /static/media/smart-robots.70db0966.jpg HTTP/1.1" 200 70493 2.230 ms
+::1 - - [27/Nov/2017:08:07:29 +0000] "GET /static/media/gundam.411a3645.png HTTP/1.1" 200 157244 2.574 ms
+::1 - - [27/Nov/2017:08:07:29 +0000] "GET /static/media/robot.3082b59c.png HTTP/1.1" 200 396047 2.200 ms
+::1 - - [27/Nov/2017:08:07:29 +0000] "GET /service-worker.js HTTP/1.1" 200 3469 1.055 ms
+::1 - - [27/Nov/2017:08:07:29 +0000] "GET /favicon.ico HTTP/1.1" 200 3870 1.153 ms
+::1 - - [27/Nov/2017:08:07:30 +0000] "GET /service-worker.js HTTP/1.1" 200 3469 1.422 ms
+::1 - - [27/Nov/2017:08:07:30 +0000] "GET /static/css/main.45cb7836.css HTTP/1.1" 304 - 3.639 ms
+::1 - - [27/Nov/2017:08:07:30 +0000] "GET /static/js/main.e2c79037.js HTTP/1.1" 304 - 4.157 ms
+::1 - - [27/Nov/2017:08:07:30 +0000] "GET /index.html?_sw-precache=91f35f2b302d7c994a5bcb75750da283 HTTP/1.1" 200 655 9.150 ms
+::1 - - [27/Nov/2017:08:07:30 +0000] "GET /static/media/gundam.411a3645.png HTTP/1.1" 304 - 3.007 ms
+::1 - - [27/Nov/2017:08:07:30 +0000] "GET /static/media/logo.5d5d9eef.svg HTTP/1.1" 304 - 2.339 ms
+::1 - - [27/Nov/2017:08:07:30 +0000] "GET /static/media/robot.3082b59c.png HTTP/1.1" 304 - 2.302 ms
+::1 - - [27/Nov/2017:08:07:30 +0000] "GET /static/media/smart-robots.70db0966.jpg HTTP/1.1" 304 - 0.579 ms
