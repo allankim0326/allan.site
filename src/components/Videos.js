@@ -1,5 +1,5 @@
-import React from 'react'
-import Video from './Video'
+import React from 'react';
+import Video from './Video';
 
 export default function Videos() {
   return (
@@ -17,5 +17,5 @@ export default function Videos() {
       <Video src="dDhYzPBVaZs" />
       <Video src="rVAeaIafIxA" />
     </div>
-  )
-  }
+  );
+}

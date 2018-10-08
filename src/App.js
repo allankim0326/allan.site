@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import Navbar from './components/Navbar'
-import Header from './components/Header'
-import Home from './components/Home'
-import Videos from './components/Videos'
+import Navbar from './components/Navbar';
+import Header from './components/Header';
+import Home from './components/Home';
+import Videos from './components/Videos';
 import './App.css';
-import {BrowserRouter, Route} from 'react-router-dom'
+import { Route } from 'react-router-dom';
 
 class App extends Component {
   render() {
@@ -21,6 +21,4 @@ class App extends Component {
   }
 }
 
-export default App
-
-
+export default App;
