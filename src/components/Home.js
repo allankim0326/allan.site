@@ -1,56 +1,57 @@
-import React, { Component, Fragment } from "react";
-import gundam from "../gundam.png";
-import smartRobots from "../smart-robots.jpg";
-import robot from "../robot.png";
+import React, { Component } from 'react';
+import gundam from '../gundam.png';
+import smartRobots from '../smart-robots.jpg';
+import robot from '../robot.png';
+import Buttons from './Buttons';
 
 export default class Home extends Component {
   state = {
-    things: ["Ouch"],
+    things: ['Ouch'],
     randomNumber: 0,
-    randomWords: "Something"
+    randomWords: 'Something'
   };
 
   render() {
-    const { randomNumber, randomWords, things } = this.state;
+    const { randomNumber, things } = this.state;
     return (
       <div>
-        <div style={{ textAlign: "center" }}>
+        <div style={{ textAlign: 'center' }}>
           <span>{`ClassName="Smart Robots"`}</span>
           <div>Welcome to my website!</div>
-          <Fragment>
-            <button onClick={this.onOuch}>punch me!</button>
-            <button onClick={this.onAddRandomOuch}>punch me!</button>
-            <button onClick={this.onRefresh}>I will cure you!</button>
-            <button onClick={this.onAddRandomNumbers}>touch me!</button>
-            <button onClick={this.onAddRandomWords}>touch me too!</button>
-          </Fragment>
+          <Buttons
+            punchMe={this.onOuch}
+            punchMeToo={this.onAddRandomOuch}
+            cureYou={this.onRefresh}
+            touchMe={this.onAddRandomNumbers}
+            touchMeToo={this.onAddRandomWords}
+          />
           {things.map((thing, index) => (
             <div key={index}>{things}</div>
           ))}
           <div>{randomNumber}</div>
           <div>
-            {randomNumber} is{" "}
+            {randomNumber} is{' '}
             {`${
-              randomNumber > 50 ? "larger than fifty" : "not larger than fifty"
+              randomNumber > 50 ? 'larger than fifty' : 'not larger than fifty'
             }`}
           </div>
           <div />
         </div>
         <div>
-          <img style={{ width: "300px" }} src={gundam} alt="" />
+          <img style={{ width: '300px' }} src={gundam} alt="" />
         </div>
         <div>
-          <img style={{ width: "300px" }} src={smartRobots} alt="" />
+          <img style={{ width: '300px' }} src={smartRobots} alt="" />
         </div>
         <div>
-          <img style={{ width: "300px" }} src={robot} alt="" />
+          <img style={{ width: '300px' }} src={robot} alt="" />
         </div>
       </div>
     );
   }
 
   onOuch = () => {
-    window.alert("Ouch!!");
+    window.alert('Ouch!!');
   };
   onRefresh = () => {
     window.location.reload();
@@ -58,7 +59,7 @@ export default class Home extends Component {
 
   onAddRandomOuch = () => {
     this.setState(state => ({
-      things: state.things.concat(["Ouch!!".repeat(Math.random() * 10)])
+      things: state.things.concat(['Ouch!!'.repeat(Math.random() * 10)])
     }));
   };
 
@@ -67,35 +68,36 @@ export default class Home extends Component {
   };
 
   onAddRandomWords = () => {
+    console.log('test');
     const alphabet = [
-      "a",
-      "b",
-      "c",
-      "d",
-      "e",
-      "f",
-      "g",
-      "h",
-      "i",
-      "j",
-      "k",
-      "l",
-      "m",
-      "n",
-      "o",
-      "p",
-      "q",
-      "r",
-      "s",
-      "t",
-      "u",
-      "v",
-      "w",
-      "x",
-      "y",
-      "z"
+      'a',
+      'b',
+      'c',
+      'd',
+      'e',
+      'f',
+      'g',
+      'h',
+      'i',
+      'j',
+      'k',
+      'l',
+      'm',
+      'n',
+      'o',
+      'p',
+      'q',
+      'r',
+      's',
+      't',
+      'u',
+      'v',
+      'w',
+      'x',
+      'y',
+      'z'
     ];
-    let randomWords = "";
+    let randomWords = '';
     let wordLength = Math.floor(Math.random() * 10);
     for (let i = 0; i < wordLength; i++) {
       randomWords +=
