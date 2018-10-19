@@ -12,7 +12,7 @@ export default class Home extends Component {
   };
 
   render() {
-    const { randomNumber, things } = this.state;
+    const { randomNumber, randomWords, things } = this.state;
     return (
       <div>
         <div style={{ textAlign: 'center' }}>
@@ -25,6 +25,7 @@ export default class Home extends Component {
             touchMe={this.onAddRandomNumbers}
             touchMeToo={this.onAddRandomWords}
           />
+          <div>{randomWords}</div>
           {things.map((thing, index) => (
             <div key={index}>{things}</div>
           ))}
