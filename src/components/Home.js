@@ -54,13 +54,21 @@ export default class Home extends Component {
     window.alert('Ouch!!');
   };
   onRefresh = () => {
-    window.location.reload();
+    this.setState(state => ({ things: ['cured'] }));
   };
 
   onAddRandomOuch = () => {
-    this.setState(state => ({
-      things: state.things.concat(['Ouch!!'.repeat(Math.random() * 10)])
-    }));
+    const thisWasCured = this.state.things[0] === 'cured';
+    if (thisWasCured) {
+      this.setState(state => {
+        const stateWithJustOneOuch = { things: ['Ouch!'] };
+        return stateWithJustOneOuch;
+      });
+    } else {
+      this.setState(state => ({
+        things: state.things.concat(['Ouch!!'.repeat(Math.random() * 10)])
+      }));
+    }
   };
 
   onAddRandomNumbers = () => {
