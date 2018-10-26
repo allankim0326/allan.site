@@ -16,8 +16,8 @@ export default class Home extends Component {
     return (
       <div>
         <div style={{ textAlign: 'center' }}>
-          <span>{`ClassName="Smart Robots"`}</span>
-          <div>Welcome to my website!</div>
+          <span>{`Welcome to my website`}</span>
+          <div>Crazy buttons!</div>
           <Buttons
             punchMe={this.onOuch}
             punchMeToo={this.onAddRandomOuch}
