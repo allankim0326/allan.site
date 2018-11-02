@@ -16,13 +16,13 @@ export default class Buttons extends Component {
     const touchMe = this.props.touchMe;
     const touchMeToo = this.props.touchMeToo;
     return (
-      <>
+      <div>
         <button onClick={punchMe}>Punch me!</button>
         <button onClick={punchMeToo}>Punch me!</button>
         <button onClick={cureYou}>I will cure you!</button>
         <button onClick={touchMe}>Touch me!</button>
         <button onClick={touchMeToo}>Touch me too!</button>
-      </>
+      </div>
     );
   }
 }
