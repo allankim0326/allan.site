@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import gundam from '../gundam.png';
+import image1 from '../../src/img/welcome.jpg';
 import smartRobots from '../smart-robots.jpg';
 import robot from '../robot.png';
 import Buttons from './Buttons';
@@ -26,7 +26,7 @@ export default class Home extends Component {
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
           <div>
             <div>
-              <img style={{ width: '300px' }} src={gundam} alt="" />
+              <img src={image1} style={{ width: '300px' }} />
             </div>
             <div>
               <img style={{ width: '300px' }} src={smartRobots} alt="" />
