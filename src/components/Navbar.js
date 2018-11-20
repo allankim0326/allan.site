@@ -16,7 +16,7 @@ function Navbar() {
           </li>
           <li className="nav-item">
             <NavLink className="nav-link" activeClassName="active" to="/chat">
-              Chats
+              Chat
             </NavLink>
           </li>
           <li className="nav-item">

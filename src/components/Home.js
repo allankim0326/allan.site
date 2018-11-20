@@ -6,27 +6,19 @@ import Buttons from './Buttons';
 
 export default class Home extends Component {
   state = {
-    chatInput: '',
-    messages: [],
     things: ['Ouch'],
     randomNumber: 0,
     randomWords: 'Something'
   };
 
   render() {
-    const {
-      chatInput,
-      messages,
-      randomNumber,
-      randomWords,
-      things
-    } = this.state;
+    const { randomNumber, randomWords, things } = this.state;
     return (
       <div>
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
           <div>
             <div>
-              <img src={image1} style={{ width: '300px' }} />
+              <img alt="" src={image1} style={{ width: '300px' }} />
             </div>
             <div>
               <img style={{ width: '300px' }} src={smartRobots} alt="" />
@@ -37,7 +29,7 @@ export default class Home extends Component {
           </div>
           <div
             style={{
-              width: '60%',
+              width: '80%',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'flex-start',
@@ -67,36 +59,10 @@ export default class Home extends Component {
               }`}
             </div>
           </div>
-          <div style={{ width: '30%' }}>
-            <input
-              placeholder="Say something"
-              style={{ width: '100%', fontSize: '1.5rem' }}
-              onChange={event =>
-                this.setState({ chatInput: event.target.value })
-              }
-              onKeyPress={this.onKeyPress}
-              value={chatInput}
-            />
-            <div style={{ minHeight: '5rem' }}>
-              {messages.map((message, index) => (
-                <div key={index}>{message}</div>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     );
   }
-
-  onKeyPress = event => {
-    const { chatInput } = this.state;
-    if (event.key === 'Enter') {
-      this.setState(state => ({
-        chatInput: '',
-        messages: state.messages.concat([chatInput])
-      }));
-    }
-  };
 
   onOuch = () => {
     window.alert('Ouch!!');
