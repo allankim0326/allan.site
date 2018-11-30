@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import request from 'axios';
-import { URL } from '../../constants';
+import { URL } from '../constants';
 
 export default class Chat extends Component {
   mounted = false;
@@ -38,7 +38,7 @@ export default class Chat extends Component {
           />
           <div style={{ minHeight: '5rem' }}>
             {messages.map((message, index) => (
-              <div key={index}>{message}</div>
+              <div key={index}>{message.content}</div>
             ))}
           </div>
         </div>
@@ -54,7 +54,7 @@ export default class Chat extends Component {
       });
       this.setState(state => ({
         chatInput: '',
-        messages: state.messages.concat([chatInput])
+        messages: state.messages.concat([{ content: chatInput }])
       }));
     }
   };
