@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import request from 'axios';
+import { socket } from '../helpers/requestHelpers';
 import { URL } from '../constants';
 
 export default function Chat() {
@@ -17,6 +18,16 @@ export default function Chat() {
       }
     }
   }, []);
+
+  useEffect(() => {
+    socket.on('receive_message', addMessage);
+    function addMessage(message) {
+      setMessages([{ content: message }].concat(messages));
+    }
+    return function cleanUp() {
+      socket.on('receive_message', addMessage);
+    };
+  });
 
   return (
     <div style={{ display: 'flex', justifyContent: 'center' }}>
@@ -44,7 +55,7 @@ export default function Chat() {
         text: chatInput
       });
       setChatInput('');
-      setMessages([{ content: chatInput }].concat(messages));
+      socket.emit('new_chat_message', chatInput);
     }
   }
 }

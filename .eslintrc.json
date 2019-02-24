@@ -23,7 +23,8 @@
     "document": false,
     "navigator": false,
     "window": false,
-    "fetch": true
+    "fetch": true,
+    "localStorage": true
   },
 
   "rules": {
