@@ -25,7 +25,7 @@ export default function Chat() {
       setMessages([{ content: message }].concat(messages));
     }
     return function cleanUp() {
-      socket.on('receive_message', addMessage);
+      socket.removeListener('receive_message', addMessage);
     };
   });
 
