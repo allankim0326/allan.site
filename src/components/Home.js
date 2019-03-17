@@ -65,7 +65,7 @@ export default class Home extends Component {
   }
 
   onOuch = () => {
-    window.alert('Ouch!!');
+    window.alert('Ouch!!, Dont touch me!!');
   };
   onRefresh = () => {
     this.setState(state => ({ things: ['cured'] }));
