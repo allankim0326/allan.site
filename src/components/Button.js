@@ -5,11 +5,13 @@ import { css } from 'emotion';
 Button.propTypes = {
   children: PropTypes.node,
   color: PropTypes.string,
+  onClick: PropTypes.func,
   style: PropTypes.object
 };
-export default function Button({ color = 'blue', children, style }) {
+export default function Button({ color = 'blue', children, onClick, style }) {
   return (
     <button
+      onClick={onClick}
       className={css`
         align-items: center;
         font-weight: bold;
