@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from './Button';
 import { css } from 'emotion';
 import { Link, NavLink } from 'react-router-dom';
 
@@ -8,6 +9,7 @@ function Navbar() {
       className={css`
         padding: 1rem;
         display: flex;
+        align-items: center;
         justify-content: space-between;
         a {
           &:hover {
@@ -23,15 +25,36 @@ function Navbar() {
             justifyContent: 'center',
             alignItems: 'center',
             fontSize: '2rem',
-            fontWeight: 'bold'
+            fontWeight: 'bold',
+            color: '#92ff82'
           }}
           to="/"
         >
           Allan
         </Link>
         <div>
-          <ul style={{ display: 'flex' }}>
-            <li>
+          <ul
+            className={css`
+              > li {
+                > a {
+                  font-size: 1.5rem;
+                  &.active {
+                    font-weight: bold;
+                  }
+                }
+                margin-left: 2rem;
+              }
+            `}
+            style={{ display: 'flex' }}
+          >
+            <li
+              className={css`
+                > a {
+                  color: #82b3ff;
+                }
+              `}
+              style={{ marginLeft: 0 }}
+            >
               <NavLink
                 className="nav-link"
                 activeClassName="active"
@@ -41,12 +64,24 @@ function Navbar() {
                 Home
               </NavLink>
             </li>
-            <li>
+            <li
+              className={css`
+                > a {
+                  color: #b482ff;
+                }
+              `}
+            >
               <NavLink className="nav-link" activeClassName="active" to="/chat">
                 Chat
               </NavLink>
             </li>
-            <li>
+            <li
+              className={css`
+                > a {
+                  color: #f482ff;
+                }
+              `}
+            >
               <NavLink
                 className="nav-link"
                 activeClassName="active"
@@ -59,7 +94,7 @@ function Navbar() {
         </div>
       </div>
       <div>
-        <button>Log In</button>
+        <Button color="#ff8282">Log In</Button>
       </div>
     </nav>
   );

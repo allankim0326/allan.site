@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import image1 from '../../src/img/welcome.jpg';
 import smartRobots from '../smart-robots.jpg';
 import robot from '../robot.png';
-import Buttons from './Buttons';
+import ActionButtons from './ActionButtons';
 
 export default class Home extends Component {
   state = {
@@ -29,6 +29,8 @@ export default class Home extends Component {
           </div>
           <div
             style={{
+              marginTop: '1rem',
+              fontSize: '1.5rem',
               width: '80%',
               display: 'flex',
               flexDirection: 'column',
@@ -36,7 +38,7 @@ export default class Home extends Component {
               alignItems: 'center'
             }}
           >
-            <Buttons
+            <ActionButtons
               punchMe={this.onOuch}
               punchMeToo={this.onAddRandomOuch}
               cureYou={this.onRefresh}

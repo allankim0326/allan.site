@@ -31,17 +31,25 @@ export default function Chat() {
 
   return (
     <div style={{ display: 'flex', justifyContent: 'center' }}>
-      <div style={{ width: '80%' }}>
+      <div style={{ width: '80%', marginTop: '1.5rem' }}>
         <input
           placeholder="Say something"
-          style={{ width: '100%', fontSize: '1.5rem' }}
+          style={{ width: '100%', fontSize: '1.5rem', padding: '1rem' }}
           onChange={event => setChatInput(event.target.value)}
           onKeyPress={onKeyPress}
           value={chatInput}
         />
-        <div style={{ minHeight: '5rem' }}>
+        <div
+          style={{
+            marginTop: '1rem',
+            minHeight: '5rem',
+            fontSize: '1.5rem'
+          }}
+        >
           {messages.map((message, index) => (
-            <div key={index}>{message.content}</div>
+            <div style={{ padding: '1rem' }} key={index}>
+              {message.content}
+            </div>
           ))}
         </div>
       </div>
