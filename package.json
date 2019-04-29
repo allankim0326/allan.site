@@ -6,6 +6,7 @@
     "axios": "^0.18.0",
     "babel-loader": "^8.0.5",
     "cors": "^2.8.5",
+    "dotenv": "^7.0.0",
     "emotion": "^10.0.7",
     "eslint": "^5.14.0",
     "eslint-config-4catalyzer-react": "^0.8.3",
