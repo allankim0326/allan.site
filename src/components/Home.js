@@ -92,7 +92,6 @@ export default class Home extends Component {
   };
 
   onAddRandomWords = () => {
-    console.log('test');
     const alphabet = [
       'a',
       'b',
