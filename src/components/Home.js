@@ -3,16 +3,18 @@ import image1 from '../../src/img/welcome.jpg';
 import smartRobots from '../smart-robots.jpg';
 import robot from '../robot.png';
 import ActionButtons from './ActionButtons';
+import firework from './firework.png';
 
 export default class Home extends Component {
   state = {
+    mouseEnteredImage: false,
     things: ['Ouch'],
     randomNumber: 0,
     randomWords: 'Something'
   };
 
   render() {
-    const { randomNumber, randomWords, things } = this.state;
+    const { mouseEnteredImage, randomNumber, randomWords, things } = this.state;
     return (
       <div>
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -59,6 +61,24 @@ export default class Home extends Component {
                   ? 'larger than fifty'
                   : 'not larger than fifty'
               }`}
+            </div>
+            {}
+            <div
+              onMouseEnter={() => this.setState({ mouseEnteredImage: true })}
+              onMouseLeave={() => this.setState({ mouseEnteredImage: false })}
+            >
+              {!mouseEnteredImage && (
+                <img src={firework} style={{ width: 480, height: 455 }} />
+              )}
+              {mouseEnteredImage && (
+                <img
+                  loop=""
+                  src="https://media.giphy.com/media/Sl7nWgFXcYnkc/giphy.gif"
+                  width="480"
+                  height="455"
+                  allowFullScreen
+                />
+              )}
             </div>
           </div>
         </div>
