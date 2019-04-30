@@ -82,7 +82,7 @@ export default class Home extends Component {
       });
     } else {
       this.setState(state => ({
-        things: state.things.concat(['Ouch!!'.repeat(Math.random() * 10)])
+        things: state.things.concat(['Aha!!'.repeat(Math.random() * 10)])
       }));
     }
   };
