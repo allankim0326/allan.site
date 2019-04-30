@@ -4,7 +4,10 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
+    "babel-loader": "^8.0.5",
     "cors": "^2.8.5",
+    "dotenv": "^7.0.0",
+    "emotion": "^10.0.7",
     "eslint": "^5.14.0",
     "eslint-config-4catalyzer-react": "^0.8.3",
     "eslint-loader": "^2.1.2",
@@ -14,6 +17,7 @@
     "eslint-plugin-react": "^7.12.4",
     "eslint-plugin-standard": "^4.0.0",
     "express": "^4.16.4",
+    "greenlock-express": "^2.7.6",
     "jwt-simple": "^0.5.5",
     "morgan": "^1.9.0",
     "mysql": "^2.16.0",

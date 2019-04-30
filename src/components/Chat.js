@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import request from 'axios';
+import { socket } from '../helpers/requestHelpers';
 import { URL } from '../constants';
 
 export default function Chat() {
@@ -18,19 +19,37 @@ export default function Chat() {
     }
   }, []);
 
+  useEffect(() => {
+    socket.on('receive_message', addMessage);
+    function addMessage(message) {
+      setMessages([{ content: message }].concat(messages));
+    }
+    return function cleanUp() {
+      socket.removeListener('receive_message', addMessage);
+    };
+  });
+
   return (
     <div style={{ display: 'flex', justifyContent: 'center' }}>
-      <div style={{ width: '80%' }}>
+      <div style={{ width: '80%', marginTop: '1.5rem' }}>
         <input
           placeholder="Say something"
-          style={{ width: '100%', fontSize: '1.5rem' }}
+          style={{ width: '100%', fontSize: '1.5rem', padding: '1rem' }}
           onChange={event => setChatInput(event.target.value)}
           onKeyPress={onKeyPress}
           value={chatInput}
         />
-        <div style={{ minHeight: '5rem' }}>
+        <div
+          style={{
+            marginTop: '1rem',
+            minHeight: '5rem',
+            fontSize: '1.5rem'
+          }}
+        >
           {messages.map((message, index) => (
-            <div key={index}>{message.content}</div>
+            <div style={{ padding: '1rem' }} key={index}>
+              {message.content}
+            </div>
           ))}
         </div>
       </div>
@@ -44,7 +63,7 @@ export default function Chat() {
         text: chatInput
       });
       setChatInput('');
-      setMessages([{ content: chatInput }].concat(messages));
+      socket.emit('new_chat_message', chatInput);
     }
   }
 }
