@@ -29,7 +29,7 @@ export default function Home() {
         <div
           style={{
             marginTop: '1rem',
-            fontSize: '2rem',
+            fontSize: '1.5rem',
             width: '80%',
             display: 'flex',
             flexDirection: 'column',
