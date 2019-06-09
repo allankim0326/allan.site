@@ -34,7 +34,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "api-start": "nodemon api/index.js",
+    "start-api": "nodemon api/index.js",
     "build": "react-scripts build",
     "server": "sudo forever -o out.log -e err.log start index.js",
     "stop-server": "sudo forever stop index.js",

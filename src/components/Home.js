@@ -1,97 +1,91 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import image1 from '../../src/img/welcome.jpg';
 import smartRobots from '../smart-robots.jpg';
 import robot from '../robot.png';
 import ActionButtons from './ActionButtons';
+import Firework from './Firework';
 
-export default class Home extends Component {
-  state = {
-    things: ['Ouch'],
-    randomNumber: 0,
-    randomWords: 'Something'
-  };
+export default function Home() {
+  const [things, setThings] = useState(['Ouch']);
+  const [randomNumber, setRandomNumber] = useState(0);
+  const [randomWords, setRandomWords] = useState('Something');
+  const [firework, setFirework] = useState(false);
 
-  render() {
-    const { randomNumber, randomWords, things } = this.state;
-    return (
-      <div>
-        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+  return (
+    <div>
+      {firework && <Firework />}
+      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <div>
           <div>
-            <div>
-              <img alt="" src={image1} style={{ width: '300px' }} />
-            </div>
-            <div>
-              <img style={{ width: '300px' }} src={smartRobots} alt="" />
-            </div>
-            <div>
-              <img style={{ width: '300px' }} src={robot} alt="" />
-            </div>
+            <img alt="" src={image1} style={{ width: '300px' }} />
           </div>
-          <div
-            style={{
-              marginTop: '1rem',
-              fontSize: '1.5rem',
-              width: '80%',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'flex-start',
-              alignItems: 'center'
-            }}
-          >
-            <ActionButtons
-              punchMe={this.onOuch}
-              punchMeToo={this.onAddRandomOuch}
-              cureYou={this.onRefresh}
-              touchMe={this.onAddRandomNumbers}
-              touchMeToo={this.onAddRandomWords}
-            />
-            <span>{`Welcome to my website`}</span>
-            <div>Crazy buttons!</div>
-            <div>{randomWords}</div>
-            {things.map((thing, index) => (
-              <div key={index}>{things}</div>
-            ))}
-            <div>{randomNumber}</div>
-            <div>
-              {randomNumber} is{' '}
-              {`${
-                randomNumber > 50
-                  ? 'larger than fifty'
-                  : 'not larger than fifty'
-              }`}
-            </div>
+          <div>
+            <img style={{ width: '300px' }} src={smartRobots} alt="" />
+          </div>
+          <div>
+            <img style={{ width: '300px' }} src={robot} alt="" />
+          </div>
+        </div>
+        <div
+          style={{
+            marginTop: '1rem',
+            fontSize: '1.5rem',
+            width: '80%',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'flex-start',
+            alignItems: 'center'
+          }}
+        >
+          <ActionButtons
+            punchMe={handleOuch}
+            punchMeToo={handleAddRandomOuch}
+            cureYou={handleRefresh}
+            touchMe={handleAddRandomNumbers}
+            touchMeToo={handleAddRandomWords}
+            firework={() => setFirework(firework => !firework)}
+          />
+          <span>{`Welcome to my website`}</span>
+          <div>Crazy buttons!</div>
+          <div>{randomWords}</div>
+          {things.map((thing, index) => (
+            <div key={index}>{things}</div>
+          ))}
+          <div>{randomNumber}</div>
+          <div>
+            {randomNumber} is{' '}
+            {`${
+              randomNumber > 50 ? 'larger than fifty' : 'not larger than fifty'
+            }`}
           </div>
         </div>
       </div>
+    </div>
+  );
+
+  function handleOuch() {
+    window.alert('Ouch!!');
+  }
+
+  function handleRefresh() {
+    setThings(['cured']);
+  }
+
+  function handleAddRandomOuch() {
+    const thisWasCured = things[0] === 'cured';
+    if (thisWasCured) {
+      return setThings(['Ouch!']);
+    }
+    return setThings(things =>
+      things.concat(['Aha!!'.repeat(Math.random() * 10)])
     );
   }
 
-  onOuch = () => {
-    window.alert('Ouch!!, Dont touch me!!');
-  };
-  onRefresh = () => {
-    this.setState(state => ({ things: ['cured'] }));
-  };
+  function handleAddRandomNumbers() {
+    setRandomNumber(Math.floor(Math.random() * 100));
+  }
 
-  onAddRandomOuch = () => {
-    const thisWasCured = this.state.things[0] === 'cured';
-    if (thisWasCured) {
-      this.setState(state => {
-        const stateWithJustOneOuch = { things: ['Ouch!'] };
-        return stateWithJustOneOuch;
-      });
-    } else {
-      this.setState(state => ({
-        things: state.things.concat(['Aha!!'.repeat(Math.random() * 10)])
-      }));
-    }
-  };
-
-  onAddRandomNumbers = () => {
-    this.setState({ randomNumber: Math.floor(Math.random() * 100) });
-  };
-
-  onAddRandomWords = () => {
+  function handleAddRandomWords() {
     const alphabet = [
       'a',
       'b',
@@ -126,6 +120,6 @@ export default class Home extends Component {
       randomWords +=
         alphabet[Math.floor(Math.random() * (alphabet.length - 1))];
     }
-    this.setState({ randomWords: randomWords });
-  };
+    setRandomWords(randomWords);
+  }
 }

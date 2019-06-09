@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Button from './Button';
 
 ActionButtons.propTypes = {
+  firework: PropTypes.func.isRequired,
   punchMe: PropTypes.func.isRequired,
   punchMeToo: PropTypes.func.isRequired,
   cureYou: PropTypes.func.isRequired,
@@ -11,6 +12,7 @@ ActionButtons.propTypes = {
 };
 
 export default function ActionButtons({
+  firework,
   punchMe,
   punchMeToo,
   cureYou,
@@ -33,6 +35,9 @@ export default function ActionButtons({
       </Button>
       <Button style={{ marginLeft: '1rem' }} onClick={touchMeToo}>
         Touch me too!
+      </Button>
+      <Button color="red" style={{ marginLeft: '1rem' }} onClick={firework}>
+        FIREWORK!!
       </Button>
     </div>
   );
