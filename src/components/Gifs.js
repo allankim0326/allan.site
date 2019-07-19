@@ -1,4 +1,5 @@
 import React from 'react';
+import Robot from './giphy.gif';
 
 export default function Gifs() {
   return (
@@ -10,6 +11,7 @@ export default function Gifs() {
         width: '100%'
       }}
     >
+      <img src={Robot} />
       Gifs
     </div>
   );
