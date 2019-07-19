@@ -71,6 +71,17 @@ function Navbar() {
                 }
               `}
             >
+              <NavLink className="nav-link" activeClassName="active" to="/gifs">
+                Gifs
+              </NavLink>
+            </li>
+            <li
+              className={css`
+                > a {
+                  color: #b482ff;
+                }
+              `}
+            >
               <NavLink className="nav-link" activeClassName="active" to="/chat">
                 Chat
               </NavLink>

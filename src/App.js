@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Home from './components/Home';
 import Chat from './components/Chat';
 import Videos from './components/Videos';
+import Gifs from './components/Gifs';
 import './App.css';
 import { Route } from 'react-router-dom';
 
@@ -17,6 +18,7 @@ class App extends Component {
           <Route exact path="/" component={Home} />
           <Route path="/videos" component={Videos} />
           <Route path="/chat" component={Chat} />
+          <Route path="/gifs" component={Gifs} />
         </div>
       </div>
     );
