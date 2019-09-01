@@ -4,6 +4,9 @@ import { css } from 'emotion';
 import { Link, NavLink } from 'react-router-dom';
 
 function Navbar() {
+  function login() {
+    alert('Login with google account');
+  }
   return (
     <nav
       className={css`
@@ -105,7 +108,9 @@ function Navbar() {
         </div>
       </div>
       <div>
-        <Button color="#ff8282">Log In</Button>
+        <Button color="#ff8282" onClick={login}>
+          Log In
+        </Button>
       </div>
     </nav>
   );
