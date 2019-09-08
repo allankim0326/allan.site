@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from './Button';
+import Modal from './Modal';
 import { css } from 'emotion';
 import { Link, NavLink } from 'react-router-dom';
 
 function Navbar() {
+  const [modalShown, setModalShown] = useState(false);
   function login() {
-    alert('Login with google account');
+    setModalShown(!modalShown);
   }
   return (
     <nav
       className={css`
-        padding: 1rem;
+        padding: 0.8rem;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -21,6 +23,7 @@ function Navbar() {
         }
       `}
     >
+      {modalShown && <Modal />}
       <div style={{ display: 'flex', width: '100%' }}>
         <Link
           style={{
