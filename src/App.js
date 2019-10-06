@@ -7,6 +7,7 @@ import Videos from './components/Videos';
 import Gifs from './components/Gifs';
 import './App.css';
 import { Route } from 'react-router-dom';
+import Modal from './components/Modal';
 
 class App extends Component {
   render() {
@@ -15,6 +16,7 @@ class App extends Component {
         <Navbar />
         <Header />
         <div>
+          <Modal />
           <Route exact path="/" component={Home} />
           <Route path="/videos" component={Videos} />
           <Route path="/chat" component={Chat} />
