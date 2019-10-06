@@ -84,7 +84,7 @@ function Navbar() {
             <li
               className={css`
                 > a {
-                  color: #b482ff;
+                  color: #ffff00;
                 }
               `}
             >
@@ -95,7 +95,7 @@ function Navbar() {
             <li
               className={css`
                 > a {
-                  color: #00ff7f;
+                  color: #00ff40;
                 }
               `}
             >
