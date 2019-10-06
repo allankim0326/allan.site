@@ -88,6 +88,17 @@ function Navbar() {
                 }
               `}
             >
+              <NavLink className="nav-link" activeClassName="active" to="/Info">
+                Info
+              </NavLink>
+            </li>
+            <li
+              className={css`
+                > a {
+                  color: #00ff7f;
+                }
+              `}
+            >
               <NavLink className="nav-link" activeClassName="active" to="/chat">
                 Chat
               </NavLink>
