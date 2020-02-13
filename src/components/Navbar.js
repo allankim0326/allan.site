@@ -67,7 +67,7 @@ function Navbar() {
             <li
               className={css`
                 > a {
-                  color: #ccc;
+                  color: #ccf000;
                 }
               `}
             >
