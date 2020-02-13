@@ -1,14 +1,9 @@
-import React, { useState } from 'react';
-import Button from './Button';
-import Modal from './Modal';
-import { css } from 'emotion';
-import { Link, NavLink } from 'react-router-dom';
+import React from "react";
+import Button from "./Button";
+import { css } from "emotion";
+import { Link, NavLink } from "react-router-dom";
 
 function Navbar() {
-  const [modalShown, setModalShown] = useState(false);
-  function login() {
-    setModalShown(!modalShown);
-  }
   return (
     <nav
       className={css`
@@ -23,16 +18,15 @@ function Navbar() {
         }
       `}
     >
-      {modalShown && <Modal />}
-      <div style={{ display: 'flex', width: '100%' }}>
+      <div style={{ display: "flex", width: "100%" }}>
         <Link
           style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            fontSize: '2rem',
-            fontWeight: 'bold',
-            color: '#92ff82'
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            fontSize: "2rem",
+            fontWeight: "bold",
+            color: "#92ff82"
           }}
           to="/"
         >
@@ -51,7 +45,7 @@ function Navbar() {
                 margin-left: 2rem;
               }
             `}
-            style={{ display: 'flex' }}
+            style={{ display: "flex" }}
           >
             <li
               className={css`
@@ -68,6 +62,21 @@ function Navbar() {
                 to="/"
               >
                 Home
+              </NavLink>
+            </li>
+            <li
+              className={css`
+                > a {
+                  color: #ccc;
+                }
+              `}
+            >
+              <NavLink
+                className="nav-link"
+                activeClassName="active"
+                to="/soccer"
+              >
+                Soccer
               </NavLink>
             </li>
             <li
@@ -122,7 +131,7 @@ function Navbar() {
         </div>
       </div>
       <div>
-        <Button color="#ff8282" onClick={login}>
+        <Button color="#ff8282" onClick={() => console.log("loging clicked")}>
           Log In
         </Button>
       </div>

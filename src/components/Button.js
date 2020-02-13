@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { css } from 'emotion';
+import React from "react";
+import PropTypes from "prop-types";
+import { css } from "emotion";
 
 Button.propTypes = {
   children: PropTypes.node,
@@ -8,7 +8,7 @@ Button.propTypes = {
   onClick: PropTypes.func,
   style: PropTypes.object
 };
-export default function Button({ color = 'blue', children, onClick, style }) {
+export default function Button({ color = "blue", children, onClick, style }) {
   return (
     <button
       onClick={onClick}
