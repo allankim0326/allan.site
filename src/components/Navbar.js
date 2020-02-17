@@ -1,19 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import Button from "./Button";
-import Modal from "./Modal";
 import { css } from "emotion";
 import { Link, NavLink } from "react-router-dom";
-import Signup from "./Signup";
 
 function Navbar() {
-  const [modalShown, setModalShown] = useState(false);
-  const [signupShown, setSignupShown] = useState(false);
-  function login() {
-    setModalShown(!modalShown);
-  }
-  function signup() {
-    setSignupShown(!signupShown);
-  }
   return (
     <nav
       className={css`
@@ -28,8 +18,6 @@ function Navbar() {
         }
       `}
     >
-      {modalShown && <Modal />}
-      {signupShown && <Signup />}
       <div style={{ display: "flex", width: "100%" }}>
         <Link
           style={{
@@ -74,6 +62,21 @@ function Navbar() {
                 to="/"
               >
                 Home
+              </NavLink>
+            </li>
+            <li
+              className={css`
+                > a {
+                  color: #ccf000;
+                }
+              `}
+            >
+              <NavLink
+                className="nav-link"
+                activeClassName="active"
+                to="/soccer"
+              >
+                Soccer
               </NavLink>
             </li>
             <li
@@ -128,11 +131,8 @@ function Navbar() {
         </div>
       </div>
       <div>
-        <Button color="#ff8282" onClick={login}>
+        <Button color="#ff8282" onClick={() => console.log("loging clicked")}>
           Log In
-        </Button>
-        <Button color="#ff8282" onClick={signup}>
-          Sign Up
         </Button>
       </div>
     </nav>
