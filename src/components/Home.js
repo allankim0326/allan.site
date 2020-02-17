@@ -1,40 +1,40 @@
-import React, { useState } from 'react';
-import image1 from '../../src/img/welcome.jpg';
-import smartRobots from '../smart-robots.jpg';
-import robot from '../robot.png';
-import ActionButtons from './ActionButtons';
-import Firework from './Firework';
+import React, { useState } from "react";
+import image1 from "../../src/img/welcome.jpg";
+import smartRobots from "../smart-robots.jpg";
+import robot from "../robot.png";
+import ActionButtons from "./ActionButtons";
+import Firework from "./Firework";
 
 export default function Home() {
-  const [things, setThings] = useState(['Ouch']);
+  const [things, setThings] = useState(["Ouch"]);
   const [randomNumber, setRandomNumber] = useState(0);
-  const [randomWords, setRandomWords] = useState('Something');
+  const [randomWords, setRandomWords] = useState("Something");
   const [firework, setFirework] = useState(false);
 
   return (
     <div>
       {firework && <Firework />}
-      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
         <div>
           <div>
-            <img alt="" src={image1} style={{ width: '300px' }} />
+            <img alt="" src={image1} style={{ width: "300px" }} />
           </div>
           <div>
-            <img style={{ width: '300px' }} src={smartRobots} alt="" />
+            <img style={{ width: "300px" }} src={smartRobots} alt="" />
           </div>
           <div>
-            <img style={{ width: '300px' }} src={robot} alt="" />
+            <img style={{ width: "300px" }} src={robot} alt="" />
           </div>
         </div>
         <div
           style={{
-            marginTop: '1rem',
-            fontSize: '1.5rem',
-            width: '80%',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'flex-start',
-            alignItems: 'center'
+            marginTop: "1rem",
+            fontSize: "1.5rem",
+            width: "80%",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "flex-start",
+            alignItems: "center"
           }}
         >
           <ActionButtons
@@ -53,9 +53,9 @@ export default function Home() {
           ))}
           <div>{randomNumber}</div>
           <div>
-            {randomNumber} is{' '}
+            {randomNumber} is{" "}
             {`${
-              randomNumber > 50 ? 'larger than fifty' : 'not larger than fifty'
+              randomNumber > 50 ? "larger than fifty" : "not larger than fifty"
             }`}
           </div>
         </div>
@@ -64,20 +64,20 @@ export default function Home() {
   );
 
   function handleOuch() {
-    window.alert('Ouch!!');
+    window.alert("Ouch!!");
   }
 
   function handleRefresh() {
-    setThings(['cured']);
+    setThings(["cured"]);
   }
 
   function handleAddRandomOuch() {
-    const thisWasCured = things[0] === 'cured';
+    const thisWasCured = things[0] === "cured";
     if (thisWasCured) {
-      return setThings(['Ouch!']);
+      return setThings(["Ouch!"]);
     }
     return setThings(things =>
-      things.concat(['Aha!!'.repeat(Math.random() * 10)])
+      things.concat(["Aha!!".repeat(Math.random() * 10)])
     );
   }
 
@@ -87,34 +87,34 @@ export default function Home() {
 
   function handleAddRandomWords() {
     const alphabet = [
-      'a',
-      'b',
-      'c',
-      'd',
-      'e',
-      'f',
-      'g',
-      'h',
-      'i',
-      'j',
-      'k',
-      'l',
-      'm',
-      'n',
-      'o',
-      'p',
-      'q',
-      'r',
-      's',
-      't',
-      'u',
-      'v',
-      'w',
-      'x',
-      'y',
-      'z'
+      "a",
+      "b",
+      "c",
+      "d",
+      "e",
+      "f",
+      "g",
+      "h",
+      "i",
+      "j",
+      "k",
+      "l",
+      "m",
+      "n",
+      "o",
+      "p",
+      "q",
+      "r",
+      "s",
+      "t",
+      "u",
+      "v",
+      "w",
+      "x",
+      "y",
+      "z"
     ];
-    let randomWords = '';
+    let randomWords = "";
     let wordLength = Math.floor(Math.random() * 10);
     for (let i = 0; i < wordLength; i++) {
       randomWords +=

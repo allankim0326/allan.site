@@ -25,6 +25,7 @@
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
     "password-hash": "^1.2.2",
+    "prop-types": "^15.7.2",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
     "react-player": "^1.11.1",

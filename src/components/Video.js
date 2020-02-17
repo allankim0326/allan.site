@@ -1,15 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import ReactPlayer from 'react-player';
-import { css } from 'emotion';
+import React from "react";
+import PropTypes from "prop-types";
+import ReactPlayer from "react-player";
+import { css } from "emotion";
 
 Video.propTypes = {
   src: PropTypes.string.isRequired,
   title: PropTypes.string
 };
-export default function Video({ src, title = 'untitled' }) {
+export default function Video({ src, title = "untitled" }) {
   return (
-    <div style={{ position: 'relative', width: 500, height: 300 }}>
+    <div style={{ position: "relative", width: 500, height: 300 }}>
       <ReactPlayer
         className={css`
           position: absolute;

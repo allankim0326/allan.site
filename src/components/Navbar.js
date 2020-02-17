@@ -1,13 +1,18 @@
-import React, { useState } from 'react';
-import Button from './Button';
-import Modal from './Modal';
-import { css } from 'emotion';
-import { Link, NavLink } from 'react-router-dom';
+import React, { useState } from "react";
+import Button from "./Button";
+import Modal from "./Modal";
+import { css } from "emotion";
+import { Link, NavLink } from "react-router-dom";
+import Signup from "./Signup";
 
 function Navbar() {
   const [modalShown, setModalShown] = useState(false);
+  const [signupShown, setSignupShown] = useState(false);
   function login() {
     setModalShown(!modalShown);
+  }
+  function signup() {
+    setSignupShown(!signupShown);
   }
   return (
     <nav
@@ -24,15 +29,16 @@ function Navbar() {
       `}
     >
       {modalShown && <Modal />}
-      <div style={{ display: 'flex', width: '100%' }}>
+      {signupShown && <Signup />}
+      <div style={{ display: "flex", width: "100%" }}>
         <Link
           style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            fontSize: '2rem',
-            fontWeight: 'bold',
-            color: '#92ff82'
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            fontSize: "2rem",
+            fontWeight: "bold",
+            color: "#92ff82"
           }}
           to="/"
         >
@@ -51,7 +57,7 @@ function Navbar() {
                 margin-left: 2rem;
               }
             `}
-            style={{ display: 'flex' }}
+            style={{ display: "flex" }}
           >
             <li
               className={css`
@@ -124,6 +130,9 @@ function Navbar() {
       <div>
         <Button color="#ff8282" onClick={login}>
           Log In
+        </Button>
+        <Button color="#ff8282" onClick={signup}>
+          Sign Up
         </Button>
       </div>
     </nav>
